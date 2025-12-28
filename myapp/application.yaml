@@ -9,6 +9,9 @@ spec:
     server: "https://kubernetes.default.svc"
   project: "default"
   source:
+    directory:
+      recurse: true
+      include: "*.yaml"
     path: "myapp"
     repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
     targetRevision: "HEAD"
