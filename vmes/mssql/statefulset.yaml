@@ -38,9 +38,9 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: "mssql"
-      resources:
-        requests:
-          storage: "8Gi"
       spec:
         accessModes:
           - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "8Gi"
