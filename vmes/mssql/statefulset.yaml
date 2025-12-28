@@ -18,8 +18,6 @@ spec:
     containers:
     - name: "mssql"
       image: "mcr.microsoft.com/mssql/server:2025-latest"
-      ports:
-      - containerPort: 1433
       env:
       - name: "ACCEPT_EULA"
         value: "Y"
@@ -32,6 +30,8 @@ spec:
           secretKeyRef:
           name: "mssql"
           key: "MSSQL_SA_PASSWORD"
+      ports:
+      - containerPort: 1433
       volumeMounts:
       - name: "mssql"
         mountPath: "/var/opt/mssql"
