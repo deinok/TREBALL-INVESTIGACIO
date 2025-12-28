@@ -1,0 +1,13 @@
+apiVersion: "argoproj.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: "myapp"
+  namespace: "argocd"
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+  project: "default"
+  source:
+    path: "myapp"
+    repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
+    targetRevision: "HEAD"
