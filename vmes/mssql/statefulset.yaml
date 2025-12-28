@@ -6,12 +6,12 @@ spec:
   serviceName: "mssql" 
   replicas: 1 
   selector:
-  matchLabels:
-    app: "mssql"
+    matchLabels:
+      app: "mssql"
   template:
-  metadata:
-    labels:
-    app: "mssql"
+    metadata:
+      labels:
+        app: "mssql"
   spec:
     securityContext:
       fsGroup: 10001
@@ -28,19 +28,19 @@ spec:
       - name: "MSSQL_SA_PASSWORD"
         valueFrom:
           secretKeyRef:
-          name: "mssql"
-          key: "MSSQL_SA_PASSWORD"
+            name: "mssql"
+            key: "MSSQL_SA_PASSWORD"
       ports:
       - containerPort: 1433
       volumeMounts:
       - name: "mssql"
         mountPath: "/var/opt/mssql"
   volumeClaimTemplates:
-    - metadata:
+  - metadata:
       name: "mssql"
-      spec:
+    resources:
+      requests:
+        storage: "8Gi"
+    spec:
       accessModes:
       - "ReadWriteOnce"
-      resources:
-        requests:
-        storage: "8Gi"
