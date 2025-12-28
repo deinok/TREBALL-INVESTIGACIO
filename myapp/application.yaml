@@ -5,9 +5,16 @@ metadata:
   namespace: "argocd"
 spec:
   destination:
+    namespace: "myapp"
     server: "https://kubernetes.default.svc"
   project: "default"
   source:
     path: "myapp"
     repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
     targetRevision: "HEAD"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - "CreateNamespace=true"
