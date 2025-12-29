@@ -13,7 +13,7 @@ spec:
         app: "rabbitmq"
     spec:
       containers:
-        - name: "nginx"
+        - name: "rabbitmq"
           env:
             - name: "RABBITMQ_DEFAULT_PASS"
               value: "VoltecVoltec7"
