@@ -1,5 +1,5 @@
 apiVersion: "apps/v1"
-kind: "Deployment"
+kind: "StatefulSet"
 metadata:
   name: "rabbitmq"
 spec:
@@ -23,3 +23,15 @@ spec:
           ports:
             - containerPort: 5672
             - containerPort: 15672
+          volumeMounts:
+            - name: "rabbitmq"
+              mountPath: "/var/lib/rabbitmq"
+  volumeClaimTemplates:
+    - metadata:
+        name: "rabbitmq"
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "4Gi"
