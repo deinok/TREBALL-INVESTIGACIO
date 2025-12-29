@@ -23,12 +23,18 @@ spec:
               value: "Y"
             - name: "MSSQL_AGENT_ENABLED"
               value: "1"
+            - name: "MSSQL_BACKUP_DIR"
+              value: "/var/opt/mssql/backup"
             - name: "MSSQL_ENABLE_HADR"
               value: "1"
+            - name: "MSSQL_LCID"
+              value: "3082"
             - name: "MSSQL_PID"
               value: "Developer"
             - name: "MSSQL_SA_PASSWORD"
               value: "VoltecVoltec7#"
+            - name: "TZ"
+              value: "Europe/Madrid"
           ports:
             - containerPort: 1433
           volumeMounts:
