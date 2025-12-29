@@ -1,0 +1,23 @@
+apiVersion: "argoproj.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: "otel"
+  namespace: "argocd"
+spec:
+  destination:
+    namespace: "otel"
+    server: "https://kubernetes.default.svc"
+  project: "default"
+  source:
+    directory:
+      recurse: true
+      include: "*.yaml"
+    path: "otel"
+    repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
+    targetRevision: "HEAD"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - "CreateNamespace=true"
