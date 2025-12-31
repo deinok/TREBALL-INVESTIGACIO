@@ -9,9 +9,12 @@ spec:
     server: "https://kubernetes.default.svc"
   project: "default"
   source:
-    repoURL: https://charts.signoz.io
-    targetRevision: 0.105.2
-    chart: signoz
+    chart: "signoz"
+    helm:
+      valueFiles:
+        - "values.yaml"
+    repoURL: "https://charts.signoz.io"
+    targetRevision: "0.105.2"
   syncPolicy:
     automated:
       prune: true

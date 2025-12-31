@@ -1,0 +1,3 @@
+signoz:
+  name: "otel"
+  replicaCount: 1
