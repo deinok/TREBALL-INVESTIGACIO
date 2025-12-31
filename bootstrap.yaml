@@ -11,7 +11,7 @@ spec:
   source:
     directory:
       recurse: true
-      include: "application.yaml"
+      include: "aapplication.yaml"
     path: "applications"
     repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
     targetRevision: "HEAD"
