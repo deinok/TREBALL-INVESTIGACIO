@@ -9,15 +9,15 @@ spec:
     server: "https://kubernetes.default.svc"
   project: "default"
   sources:
-    - chart: "metrics-server"
+    - repoURL: "https://kubernetes-sigs.github.io/metrics-server"
+      chart: "metrics-server"
       helm:
         valueFiles:
           - "$values/metrics-server/values.yaml"
-      repoURL: "https://kubernetes-sigs.github.io/metrics-server"
       targetRevision: "3.13.0"
-    - path: "metrics-server"
+    - repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
       ref: "values"
-      repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
+      targetRevision: "HEAD"
   syncPolicy:
     automated:
       prune: true
