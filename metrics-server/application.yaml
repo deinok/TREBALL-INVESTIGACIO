@@ -8,13 +8,16 @@ spec:
     namespace: "metrics-server"
     server: "https://kubernetes.default.svc"
   project: "default"
-  source:
-    chart: "metrics-server"
-    helm:
-      valueFiles:
-        - "values.yaml"
-    repoURL: "https://kubernetes-sigs.github.io/metrics-server"
-    targetRevision: "3.13.0"
+  sources:
+    - chart: "metrics-server"
+      helm:
+        valueFiles:
+          - "$values/metrics-server/values.yaml"
+      repoURL: "https://kubernetes-sigs.github.io/metrics-server"
+      targetRevision: "3.13.0"
+    - path: "metrics-server"
+      ref: "values"
+      repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
   syncPolicy:
     automated:
       prune: true
