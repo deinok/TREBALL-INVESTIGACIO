@@ -12,7 +12,7 @@ spec:
     chart: "metrics-server"
     helm:
       valueFiles:
-        - "values.yaml"
+        - "metrics-server/values.yaml"
     repoURL: "https://kubernetes-sigs.github.io/metrics-server"
     targetRevision: "3.13.0"
   syncPolicy:
