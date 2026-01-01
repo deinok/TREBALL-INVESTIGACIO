@@ -8,13 +8,16 @@ spec:
     namespace: "otel"
     server: "https://kubernetes.default.svc"
   project: "default"
-  source:
-    chart: "signoz"
-    helm:
-      valueFiles:
-        - "values.yaml"
-    repoURL: "https://charts.signoz.io"
-    targetRevision: "0.105.2"
+  sources:
+    - repoURL: "https://charts.signoz.io"
+      chart: "signoz"
+      helm:
+        valueFiles:
+          - "$values/otel/values.yaml"
+      targetRevision: "0.105.2"
+    - repoURL: "https://github.com/deinok/TREBALL-INVESTIGACIO.git"
+      ref: "values"
+      targetRevision: "HEAD"
   syncPolicy:
     automated:
       prune: true
