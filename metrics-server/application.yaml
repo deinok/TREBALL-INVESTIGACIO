@@ -5,7 +5,7 @@ metadata:
   namespace: "argocd"
 spec:
   destination:
-    namespace: "otel"
+    namespace: "metrics-server"
     server: "https://kubernetes.default.svc"
   project: "default"
   source:
